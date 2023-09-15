@@ -1,0 +1,15 @@
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\bin\Debug\net7.0\Business.deps.json
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\bin\Debug\net7.0\Business.dll
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\bin\Debug\net7.0\Business.pdb
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\bin\Debug\net7.0\Domain.dll
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\bin\Debug\net7.0\Domain.pdb
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\Business.csproj.AssemblyReference.cache
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\Business.AssemblyInfoInputs.cache
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\Business.AssemblyInfo.cs
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\Business.csproj.CoreCompileInputs.cache
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\Business.csproj.CopyComplete
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\Business.dll
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\refint\Business.dll
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\Business.pdb
+X:\Project\prn221\LeThanhPhong_SE1603_A01\Business\obj\Debug\net7.0\ref\Business.dll
