@@ -9,7 +9,7 @@
         >
     <Grid HorizontalAlignment="Center" Width="411">
 
-        <TextBlock TextWrapping="Wrap" Margin="0,32,0,374" HorizontalAlignment="Center"  Width="187" TextAlignment="Center" FontSize="16"><Run Text="Car"/><LineBreak/><Run/></TextBlock>
+        <TextBlock TextWrapping="Wrap" Margin="0,32,0,625" HorizontalAlignment="Center"  Width="187" TextAlignment="Center" FontSize="16"><Run Text="Car"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="carName" HorizontalAlignment="Left" Margin="182,105,0,0" TextWrapping="Wrap"   Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="69,106,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" x:Name="carNoDoors" Margin="182,152,0,0" TextWrapping="Wrap" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
@@ -29,12 +29,6 @@
         <TextBox x:Name="pricePerDay" HorizontalAlignment="Left" Margin="183,568,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
         <Label Content="Price Per Day" HorizontalAlignment="Left" Margin="69,569,0,0" VerticalAlignment="Top"/>
         <Label Content="Description" HorizontalAlignment="Left" Margin="69,429,0,0" VerticalAlignment="Top"/>
-        <RichTextBox x:Name="carDesc" Margin="183,429,47,140">
-            <FlowDocument>
-                <Paragraph>
-                    <Run />
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
+        <TextBox x:Name="carDesc" Margin="183,429,47,140"></TextBox>
     </Grid>
 </Window>

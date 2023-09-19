@@ -12,7 +12,24 @@ namespace Business.Service.Impl
 {
     public class CarService: BaseService<CarInformation>,ICarService
     {
-        public CarService(IRepository<CarInformation> repository) : base(repository) { }
+        IRepository<RentingDetail> rentingDetailRepository;
+        public CarService(IRepository<CarInformation> repository, IRepository<RentingDetail> rentingDetailRepository) : base(repository) {
+            this.rentingDetailRepository = rentingDetailRepository;
+        }
         public CarService() :base(new Repository<CarInformation>(new FucarRentingManagementContext())) { }
+
+        public override void Delete(CarInformation car)
+        {
+            bool isUsed = rentingDetailRepository.GetAll().ToList().Any(renting => renting.CarId == car.CarId);
+            
+            if (isUsed)
+            {
+                car.CarStatus = 0;
+                this.Update(car);
+            }
+            else { 
+                base.Delete(car);
+            }
+        }
     }
 }

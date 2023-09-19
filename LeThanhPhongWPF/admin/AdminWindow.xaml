@@ -14,36 +14,8 @@
 
                     <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,108"
                               AutoGenerateColumns="True"
-                              x:Name="customerDatagrid" RenderTransformOrigin="0.5,0.5">
-                        <DataGrid.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform AngleX="-0.186"/>
-                                <RotateTransform/>
-                                <TranslateTransform X="-0.497"/>
-                            </TransformGroup>
-                        </DataGrid.RenderTransform>
-                    </DataGrid>
-
-
-                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="502" Margin="241,0,0,57">
-                        <TextBox Text="Search" Width="157" VerticalContentAlignment="Center" Padding="5px 0 0 0"/>
-                        <ComboBox Margin="5px 0 0 0"></ComboBox>
-                        <Button Content="Search" Margin="5px 0 0 0"   Width="85" Height="29" />
-                    </StackPanel>
-                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                        <Button Content="Add" Margin="5,0,5,0" Padding="15px 0px"></Button>
-                        <Button Content="Update" Margin="5,0,5,0" Padding="15px 0px"/>
-                        <Button Content="Delete" Margin="5,0,5,0" Padding="15px 0px"></Button>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Car">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,108"
-                              AutoGenerateColumns="True"
-                              x:Name="carDatagrid" RenderTransformOrigin="0.5,0.5"
-                              ItemsSource="{Binding Cars}"
+                              x:Name="customerDatagrid" RenderTransformOrigin="0.5,0.5"
+                                ItemsSource="{Binding Path=Customers}"
                               >
                         <DataGrid.RenderTransform>
                             <TransformGroup>
@@ -62,21 +34,28 @@
                         <Button Content="Search" Margin="5px 0 0 0"   Width="85" Height="29" />
                     </StackPanel>
                     <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                        <Button Content="Add" Margin="5,0,5,0" Padding="15px 0px"></Button>
-                        <Button Content="Update" Margin="5,0,5,0" Padding="15px 0px"/>
-                        <Button Content="Delete" Margin="5,0,5,0" Padding="15px 0px"></Button>
+                        <Button Content="Add" Margin="5,0,5,0" Padding="15px 0px" Click="CustomerAddClick"></Button>
+                        <Button Content="Update" Margin="5,0,5,0" Padding="15px 0px" Click="CustomerUpdateClick"/>
+                        <Button Content="Delete" Margin="5,0,5,0" Padding="15px 0px" Click="CustomerDeleteClick"></Button>
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Renting Transaction">
+            <TabItem Header="Car">
                 <Grid Background="#FFE5E5E5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="18*"/>
-                        <ColumnDefinition Width="379*"/>
-                    </Grid.ColumnDefinitions>
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,108"
-                   AutoGenerateColumns="True"
-                   x:Name="rentingDatagrid" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                    <DataGrid  SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,108"
+                              AutoGenerateColumns="False"
+                              x:Name="carDatagrid" RenderTransformOrigin="0.5,0.5"
+                              ItemsSource="{Binding Path=Cars}"
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="CarId" Binding="{Binding CarId }" />
+                            <DataGridTextColumn Header="CarName" Binding="{Binding CarName }" />
+                            <DataGridTextColumn Header="CarDescription" Binding="{Binding CarDescription }" />
+                            <DataGridTextColumn Header="NumberOfDoors" Binding="{Binding NumberOfDoors }" />
+                            <DataGridTextColumn Header="SeatingCapacity" Binding="{Binding SeatingCapacity }" />
+                            <DataGridTextColumn Header="FuelType" Binding="{Binding FuelType }" />
+                            <DataGridTextColumn Header="Year" Binding="{Binding Year }" />
+                        </DataGrid.Columns>
                         <DataGrid.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -88,12 +67,56 @@
                     </DataGrid>
 
 
-                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="502" Margin="205,0,0,57" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="502" Margin="241,0,0,57">
                         <TextBox Text="Search" Width="157" VerticalContentAlignment="Center" Padding="5px 0 0 0"/>
                         <ComboBox Margin="5px 0 0 0"></ComboBox>
                         <Button Content="Search" Margin="5px 0 0 0"   Width="85" Height="29" />
                     </StackPanel>
-                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1" Margin="251,0,0,0">
+                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <Button Content="Add" Margin="5,0,5,0" Padding="15px 0px" Click="CarAddClick"></Button>
+                        <Button Content="Update" Margin="5,0,5,0" Padding="15px 0px" Click="CarUpdateClick" />
+                        <Button Content="Delete" Margin="5,0,5,0" Padding="15px 0px" Click="CarDeleteClick"></Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Renting Transaction">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="62*"/>
+                        <ColumnDefinition Width="317*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,108"
+                   AutoGenerateColumns="True"
+                   x:Name="rentingDatagrid" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3"
+                                ItemsSource="{Binding Path=RentingTransactions}"
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="CarId" Binding="{Binding RentingTransationId  }" />
+                            <DataGridTextColumn Header="CarName" Binding="{Binding RentingDate  }" />
+                            <DataGridTextColumn Header="CarDescription" Binding="{Binding TotalPrice  }" />
+                            <DataGridTextColumn Header="NumberOfDoors" Binding="{Binding Customer  }" />
+                            <DataGridTextColumn Header="SeatingCapacity" Binding="{Binding RentingDetails  }" />
+                            <DataGridTextColumn Header="FuelType" Binding="{Binding FuelType }" />
+                            <DataGridTextColumn Header="Year" Binding="{Binding Year }" />
+                        </DataGrid.Columns>
+                        <DataGrid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="-0.186"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="-0.497"/>
+                            </TransformGroup>
+                        </DataGrid.RenderTransform>
+                    </DataGrid>
+
+
+                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="502" Margin="81,0,0,57" Grid.Column="2">
+                        <TextBox Text="Search" Width="157" VerticalContentAlignment="Center" Padding="5px 0 0 0"/>
+                        <ComboBox Margin="5px 0 0 0"></ComboBox>
+                        <Button Content="Search" Margin="5px 0 0 0"   Width="85" Height="29" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="2" Margin="127,0,0,0">
                         <Button Content="Add" Margin="5,0,5,0" Padding="15px 0px"></Button>
                         <Button Content="Update" Margin="5,0,5,0" Padding="15px 0px"/>
                         <Button Content="Delete" Margin="5,0,5,0" Padding="15px 0px"></Button>

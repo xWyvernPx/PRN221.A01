@@ -33,6 +33,7 @@ namespace Business.Service.Impl
                 throw new ArgumentNullException(nameof(entity));
 
             _repository.Add(entity);
+            _repository.SaveChanges();
         }
 
         public virtual void Update(TEntity entity)
@@ -41,6 +42,7 @@ namespace Business.Service.Impl
                 throw new ArgumentNullException(nameof(entity));
 
             _repository.Update(entity);
+
         }
 
         public virtual void Delete(TEntity entity)
@@ -49,6 +51,7 @@ namespace Business.Service.Impl
                 throw new ArgumentNullException(nameof(entity));
 
             _repository.Remove(entity);
+            _repository.SaveChanges();
         }
 
         public virtual void DeleteRange(IEnumerable<TEntity> entities)

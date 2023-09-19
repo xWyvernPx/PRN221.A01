@@ -6,8 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Business.Service.Interface
 {
-    public interface ICustomerService
+    public interface ICustomerService:IBaseService<Customer>
     {
         List<Customer> GetCustomers();
+        Customer GetCustomerByEmail(string email);
+        Customer CheckAuth(string email, string password);
+        int getNextId();
     }
 }

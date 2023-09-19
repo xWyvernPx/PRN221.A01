@@ -7,6 +7,8 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Models;
+using Microsoft.EntityFrameworkCore.Query;
+
 namespace Infra.Implement
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
@@ -59,10 +61,17 @@ namespace Infra.Implement
         {
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
+            //_context.Attach(entity);
 
-            _context.Entry(entity).State = EntityState.Modified;
+            
+
+            _context.Attach(entity).State = EntityState.Modified;
+            _context.SaveChanges();
         }
-
+        public void Remove(Func<TEntity, bool> filter)
+        {
+            _entities.Where(filter).AsQueryable().ExecuteDelete();
+        }
         public void Remove(TEntity entity)
         {
             if (entity == null)
@@ -77,6 +86,21 @@ namespace Infra.Implement
                 throw new ArgumentNullException(nameof(entities));
 
             _entities.RemoveRange(entities);
+        }
+        public void SaveChanges()
+        {
+             _context.SaveChanges();
+        }
+        public void Update(Expression<Func<TEntity, bool>>? filter, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
+        {
+            var query = _entities.AsQueryable();
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+
+            }
+            query.ExecuteUpdate(setPropertyCalls);
         }
     }
 }
