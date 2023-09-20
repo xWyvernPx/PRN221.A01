@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SkIWhppJ/AP9btjNxBzaykSNHl69tzhk4G1ohJIqLsWDFp6t6UjsTBfZbMbnUXqUm/LGoxg5QovxThBIunCvvg==",
+  "dgSpecHash": "Ce7pMqjzwpHik6oEuxm61p/z1iGu4kg0deADaZ7wFx97V+r5AQrYZt16JZJ+JaggeSttvqNinSSUmtf8VgajPQ==",
   "success": true,
-  "projectFilePath": "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phong\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\phong\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

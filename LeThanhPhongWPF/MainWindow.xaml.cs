@@ -2,6 +2,7 @@
 using LeThanhPhongWPF.admin;
 using LeThanhPhongWPF.customer;
 using LeThanhPhongWPF.Extensions;
+using LeThanhPhongWPF.State;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -68,6 +69,7 @@ namespace LeThanhPhongWPF
                     if(user != null)
                     {
                         var customerWindow = ((IServiceProvider)this.Tag).GetService<CustomerWindow>();
+                        AppState.CustomerInformation = user;
                         this.Hide();
                         customerWindow.Show();
                     }else

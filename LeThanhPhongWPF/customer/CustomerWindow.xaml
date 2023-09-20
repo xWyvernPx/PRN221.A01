@@ -10,38 +10,26 @@
         <TabControl>
             <TabItem Header="Profile" GotFocus="TabItem_GotFocus" >
                 <Grid Background="#FFE5E5E5">
-
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"  Margin="0,0,0,108"
-                       AutoGenerateColumns="True"
-                       x:Name="customerDatagrid" RenderTransformOrigin="0.5,0.5">
-                        <DataGrid.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform AngleX="-0.186"/>
-                                <RotateTransform/>
-                                <TranslateTransform X="-0.497"/>
-                            </TransformGroup>
-                        </DataGrid.RenderTransform>
-                    </DataGrid>
-
-
-                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="502" Margin="241,0,0,57">
-                        <TextBox Text="Search" Width="157" VerticalContentAlignment="Center" Padding="5px 0 0 0"/>
-                        <ComboBox Margin="5px 0 0 0"></ComboBox>
-                        <Button Content="Search" Margin="5px 0 0 0"   Width="85" Height="29" />
-                    </StackPanel>
-                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                        <Button Content="Add" Margin="5,0,5,0" Padding="15px 0px"></Button>
-                        <Button Content="Update" Margin="5,0,5,0" Padding="15px 0px"/>
-                        <Button Content="Delete" Margin="5,0,5,0" Padding="15px 0px"></Button>
-                    </StackPanel>
+                    <TextBlock TextWrapping="Wrap" Text="Profile"  HorizontalAlignment="Center" Width="186" TextAlignment="Center" FontSize="16" Margin="0,0,0,382"/>
+                    <TextBlock x:Name="txtName" HorizontalAlignment="Left" Margin="349,51,0,0" TextWrapping="Wrap"  Width="181" Height="27"  VerticalAlignment="Top"/>
+                    <Label Content="Name" HorizontalAlignment="Left" Margin="258,52,0,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="txtPhone" HorizontalAlignment="Left" Margin="349,98,0,0" TextWrapping="Wrap" Width="181" Height="27"  VerticalAlignment="Top"/>
+                    <Label Content="Telephone" HorizontalAlignment="Left" Margin="258,99,0,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="txtEmail" HorizontalAlignment="Left" Margin="349,144,0,0" TextWrapping="Wrap"  Width="181" Height="27" VerticalAlignment="Top"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="258,145,0,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="dob" HorizontalAlignment="Left" Margin="349,195,0,0"  Width="181" Height="27"  VerticalAlignment="Top"/>
+                    <Label Content="DoB" HorizontalAlignment="Left" Margin="258,196,0,0" VerticalAlignment="Top"/>
+                    <PasswordBox x:Name="txtPassword" IsEnabled="False" HorizontalAlignment="Left" Margin="349,242,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+                    <Label Content="Password" HorizontalAlignment="Left" Margin="258,243,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Update" Padding="12 3" HorizontalAlignment="Left" Margin="322,296,0,0" VerticalAlignment="Top" Click="UpdateClickHandler"/>
+                    <Button Content="Logout" Padding="12 3" HorizontalAlignment="Left" Margin="397,296,0,0" VerticalAlignment="Top" Click="LogoutClickHandler"/>
                 </Grid>
             </TabItem>
             <TabItem Header="History" GotFocus="TabItem_GotFocus_1" >
                 <Grid Background="#FFE5E5E5">
                     <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,108"
                        AutoGenerateColumns="True"
-                       x:Name="carDatagrid" RenderTransformOrigin="0.5,0.5">
+                       x:Name="transDatagrid" ItemsSource="{Binding Path=RentingTransactions}" RenderTransformOrigin="0.5,0.5">
                         <DataGrid.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -53,15 +41,8 @@
                     </DataGrid>
 
 
-                    <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="502" Margin="241,0,0,57">
-                        <TextBox Text="Search" Width="157" VerticalContentAlignment="Center" Padding="5px 0 0 0"/>
-                        <ComboBox Margin="5px 0 0 0"></ComboBox>
-                        <Button Content="Search" Margin="5px 0 0 0"   Width="85" Height="29" />
-                    </StackPanel>
                     <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                        <Button Content="Add" Margin="5,0,5,0" Padding="15px 0px"></Button>
-                        <Button Content="Update" Margin="5,0,5,0" Padding="15px 0px"/>
-                        <Button Content="Delete" Margin="5,0,5,0" Padding="15px 0px"></Button>
+                        <Button Content="ViewDetail" Margin="5,0,5,0" Padding="15px 0px" Click="ViewDetailClick"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
