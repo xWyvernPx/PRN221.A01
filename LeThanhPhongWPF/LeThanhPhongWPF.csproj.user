@@ -25,6 +25,9 @@
     <Compile Update="common\TransactionDetailViewWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="common\TransactionManipulateWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="customer\CustomerWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="common\TransactionDetailViewWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="common\TransactionManipulateWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="customer\CustomerWindow.xaml">

@@ -9,6 +9,6 @@ namespace Business.Service.Interface
 {
     public interface ICarService: IBaseService<CarInformation>
     {
-
+        IEnumerable<CarInformation> SearchCar(string keywordCarName);
     }
 }

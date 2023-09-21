@@ -62,6 +62,7 @@ namespace LeThanhPhongWPF.common
                     carYear.Text = carInformation.Year.ToString();
                     carDesc.Text = carInformation.CarDescription;
                     pricePerDay.Text = carInformation.CarRentingPricePerDay.ToString();
+                    cbStatus.IsChecked = carInformation.CarStatus == 1;
                 }
             };
         }
@@ -105,12 +106,24 @@ namespace LeThanhPhongWPF.common
                     Year = int.Parse(carYear.Text),
                     ManufacturerId = manufacturer.ManufacturerId,
                     SupplierId = supplier.SupplierId,
-                    CarStatus = ACTIVE_STATUS,
+                    CarStatus = cbStatus.IsChecked??false? (byte)1 : (byte)0,
                     CarRentingPricePerDay = decimal.Parse(pricePerDay.Text)
                 };
                 if (isUpdate) {
                     car.CarId = carInformation.CarId;
                     UpdateCar(car);
+                    carInformation.CarName = car.CarName;
+                    carInformation.NumberOfDoors= car.NumberOfDoors;
+                    carInformation.SeatingCapacity = car.SeatingCapacity;
+                    carInformation.FuelType = car.FuelType;
+                    carInformation.Manufacturer =  manufacturers.Find(manu => manu.ManufacturerId == car.ManufacturerId);
+                    carInformation.ManufacturerId = car.ManufacturerId;
+                    carInformation.Supplier = suppliers.Find(manu => manu.SupplierId == car.SupplierId);
+                    carInformation.SupplierId = car.SupplierId;
+                    carInformation.Year = car.Year;
+                    carInformation.CarDescription = car.CarDescription;
+                    carInformation.CarRentingPricePerDay = car.CarRentingPricePerDay;
+                    carInformation.CarStatus = car.CarStatus;
                 }
                 else
                 {

@@ -30,7 +30,7 @@ namespace LeThanhPhongWPF.customer
         private ICustomerService customerService;
         private IRentingTransactionService transactionService;
         private ObservableCollection<RentingTransaction> RentingTransactions { get; set; } = new();
-
+        public Action LogoutHandler { get; set; }
 
         public CustomerWindow(IServiceProvider serviceProvider, ICustomerService customerService, IRentingTransactionService transService) {
             InitializeComponent();
@@ -80,7 +80,7 @@ namespace LeThanhPhongWPF.customer
             }
         }
         private void LogoutClickHandler(object sender, RoutedEventArgs e) {
-            AppState.CustomerInformation = null;
+            LogoutHandler.Invoke();
         }
         private void TabItem_GotFocus(object sender, RoutedEventArgs e)
         {

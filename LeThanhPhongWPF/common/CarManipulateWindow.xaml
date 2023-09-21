@@ -7,28 +7,30 @@
         mc:Ignorable="d"
         Title="Car Detail" Height="703" Width="481"
         >
-    <Grid HorizontalAlignment="Center" Width="411" Margin="0,0,0,-6">
+    <Grid HorizontalAlignment="Center" Width="411" Margin="0,10,0,-6">
 
-        <TextBlock TextWrapping="Wrap" Margin="0,32,0,625" HorizontalAlignment="Center"  Width="187" TextAlignment="Center" FontSize="16"><Run Text="Car"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="carName" HorizontalAlignment="Left" Margin="182,105,0,0" TextWrapping="Wrap"   Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="69,106,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" x:Name="carNoDoors" Margin="182,152,0,0" TextWrapping="Wrap" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="Number Of Door" HorizontalAlignment="Left" Margin="69,153,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="seatCapacity" HorizontalAlignment="Left" Margin="182,198,0,0" TextWrapping="Wrap"  Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="SeatingCapacity&#xD;&#xA;" HorizontalAlignment="Left" Margin="69,199,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="fuelType" HorizontalAlignment="Left" Margin="182,249,0,0" Text="TextBox" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="FuelType&#xD;&#xA;" HorizontalAlignment="Left" Margin="69,250,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="carYear" HorizontalAlignment="Left" Margin="182,296,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="Year" HorizontalAlignment="Left" Margin="69,297,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="manufacturerCombobox" DisplayMemberPath="ManufacturerName" HorizontalAlignment="Left" Margin="182,340,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="Manufacturer" HorizontalAlignment="Left" Margin="69,341,0,0" VerticalAlignment="Top"/>
-        <Button Content="Save" Padding="12 3" HorizontalAlignment="Left" Margin="155,638,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="Cancel" Padding="12 3" HorizontalAlignment="Left" Margin="235,638,0,0" VerticalAlignment="Top"/>
-        <ComboBox  x:Name="supplierCombobox" DisplayMemberPath="SupplierName" HorizontalAlignment="Left" Margin="182,389,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="Supplier" HorizontalAlignment="Left" Margin="69,390,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="pricePerDay" HorizontalAlignment="Left" Margin="183,568,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="Price Per Day" HorizontalAlignment="Left" Margin="69,569,0,0" VerticalAlignment="Top"/>
-        <Label Content="Description" HorizontalAlignment="Left" Margin="69,429,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="carDesc" Margin="183,429,47,140"></TextBox>
+        <TextBlock TextWrapping="Wrap" Margin="0,23,0,634" HorizontalAlignment="Center"  Width="187" TextAlignment="Center" FontSize="16"><Run Text="Car"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="carName" HorizontalAlignment="Left" Margin="179,66,0,0" TextWrapping="Wrap"   Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="66,67,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" x:Name="carNoDoors" Margin="179,113,0,0" TextWrapping="Wrap" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Number Of Door" HorizontalAlignment="Left" Margin="66,114,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="seatCapacity" HorizontalAlignment="Left" Margin="179,159,0,0" TextWrapping="Wrap"  Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="SeatingCapacity&#xD;&#xA;" HorizontalAlignment="Left" Margin="66,160,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="fuelType" HorizontalAlignment="Left" Margin="179,210,0,0" Text="TextBox" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="FuelType&#xD;&#xA;" HorizontalAlignment="Left" Margin="66,211,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="carYear" HorizontalAlignment="Left" Margin="179,257,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Year" HorizontalAlignment="Left" Margin="66,258,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="manufacturerCombobox" DisplayMemberPath="ManufacturerName" HorizontalAlignment="Left" Margin="179,300,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Manufacturer" HorizontalAlignment="Left" Margin="66,302,0,0" VerticalAlignment="Top"/>
+        <Button Content="Save" Padding="12 3" HorizontalAlignment="Left" Margin="158,614,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Cancel" Padding="12 3" HorizontalAlignment="Left" Margin="238,614,0,0" VerticalAlignment="Top"/>
+        <ComboBox  x:Name="supplierCombobox" DisplayMemberPath="SupplierName" HorizontalAlignment="Left" Margin="179,350,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Supplier" HorizontalAlignment="Left" Margin="66,351,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="pricePerDay" HorizontalAlignment="Left" Margin="180,529,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Price Per Day" HorizontalAlignment="Left" Margin="66,530,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="66,390,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="carDesc" Margin="180,390,50,179"></TextBox>
+        <CheckBox x:Name="cbStatus" HorizontalAlignment="Left" Margin="180,566,0,0" Width="181" Height="27" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Status" HorizontalAlignment="Left" Margin="66,567,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

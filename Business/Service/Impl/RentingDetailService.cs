@@ -32,5 +32,14 @@ namespace Business.Service.Impl
                 throw new Exception("Transaction does not exist no more");
             }
         }
+        public override void Update(RentingDetail rentingDetail)
+        {
+            _repository.Update(c => c.RentingTransactionId == rentingDetail.RentingTransactionId,
+                        setter => setter.SetProperty(c => c.CarId, rentingDetail.CarId)
+                                .SetProperty(c => c.StartDate, rentingDetail.StartDate)
+                                .SetProperty(c => c.EndDate, rentingDetail.EndDate)
+                                .SetProperty(c => c.Price, rentingDetail.Price));
+            _repository.SaveChanges();
+        }
     }
 }

@@ -21,29 +21,21 @@
         <Grid Margin="49,105,194,300">
             <Label Content="Total Price" Margin="0,0,68,253" />
             <TextBlock Text="NaN" Margin="80,5,0,253" x:Name="txtTotalPrice"/>
-            <Label Content="Customer" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top"/>
         </Grid>
-        <ComboBox x:Name="customerCombo" DisplayMemberPath="Email" IsTextSearchEnabled="True" Margin="129,645,129,30"/>
 
-        <StackPanel Orientation="Vertical" Margin="10,196,-10,47">
-
-            <DataGrid  Margin="10,139,10,96" x:Name="detailsGrid" AutoGenerateColumns="False">
+        <StackPanel Orientation="Vertical" Margin="49,135,10,368">
+            <DataGrid x:Name="detailsGrid" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Start Date " Binding="{Binding StartDate  }" />
-                    <DataGridTextColumn Header="End Date" Binding="{Binding EndDate  }" />
-                    <DataGridTextColumn Header="Price Per Day" Binding="{Binding Price }" />
-                    <DataGridTextColumn Header="Car Id" Binding="{Binding CarId }" />
-                    <DataGridTextColumn Header="Car Name" Binding="{Binding Path=Car.CarName}" />
+                    <DataGridTextColumn Header="Start Date " Binding="{Binding StartDate}" />
+                    <DataGridTextColumn Header="End Date" Binding="{Binding EndDate}" />
+                    <DataGridTextColumn Header="Price Per Day" Binding="{Binding Price}" />
+                    <DataGridTextColumn Header="Car Id" Binding="{Binding CarId}" />
+                    <DataGridTextColumn Header="Car Name" Binding="{Binding Car.CarName}" />
                 </DataGrid.Columns>
             </DataGrid>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
-                <Button x:Name="btnAdd"  Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnAdd_Click"  Padding="10 5" />
-                <Button Content="Remove" x:Name="btnRemove" HorizontalAlignment="Left" VerticalAlignment="Top"  Padding="10 5" Click="btnRemove_Click" />
-            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
         </StackPanel>
-        <Button Content="Save" x:Name="btnSave" Height="35" VerticalAlignment="Top" Margin="225,576,225,0" Click="SaveClick"/>
 
-        <Button Content="Close" HorizontalAlignment="Center" Margin="0,575,0,0" VerticalAlignment="Top" Padding="10 5"  Click="Button_Click"/>
+        <Button Content="Close" Margin="224,672,224,10" Padding="10 5" Height="30" Click="Button_Click"/>
     </Grid>
 </Window>

@@ -61,10 +61,6 @@ namespace Infra.Implement
         {
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
-            //_context.Attach(entity);
-
-            
-
             _context.Attach(entity).State = EntityState.Modified;
             _context.SaveChanges();
         }

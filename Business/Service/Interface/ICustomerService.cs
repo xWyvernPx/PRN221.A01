@@ -12,5 +12,6 @@ namespace Business.Service.Interface
         Customer GetCustomerByEmail(string email);
         Customer CheckAuth(string email, string password);
         int getNextId();
+        IEnumerable<Customer> SearchCustomer(string type, string keyword);
     }
 }

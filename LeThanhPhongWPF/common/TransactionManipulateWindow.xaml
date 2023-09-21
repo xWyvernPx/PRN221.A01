@@ -1,0 +1,41 @@
+﻿<Window x:Class="LeThanhPhongWPF.common.TransactionManipulateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeThanhPhongWPF.common"
+        mc:Ignorable="d"
+        Title="TransactionManipulateWindow" Height="700" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10,10,0,-6">
+        <TextBlock Text="Transaction Detail" Margin="0,10,0,402" HorizontalAlignment="Center" FontSize="20" FontWeight="SemiBold"></TextBlock>
+
+        <Label Content="Id" Margin="153,54,551,415" x:Name="lbId" Height="30"/>
+        <TextBlock Text="" Margin="270,54,270,415" x:Name="txtId" Height="30"/>
+        <Label Content="Renting Date" Margin="153,89,551,380" x:Name="lbRentingDate" Height="30"/>
+        <TextBlock Text="" Margin="270,89,270,380" x:Name="txtDate" Height="30"/>
+        <Label Content="Total Price" Margin="153,124,551,345" x:Name="lbTotal" Height="30"/>
+        <TextBlock Text="NaN" Margin="270,124,270,345"  x:Name="txtTotalPrice" Height="30"/>
+        <Label Content="Customer" Margin="153,155,551,314" x:Name="lbCustomer" Height="30"/>
+        <ComboBox x:Name="customerCombo" DisplayMemberPath="Email" IsTextSearchEnabled="True" IsEditable="True"  Height="30"  Margin="270,196,270,354" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="153,190,0,279" Height="30">
+            <Button x:Name="btnAdd"  Height="30"  Content="Add" Click="btnAdd_Click"  Padding="10 5" />
+            <Button Content="Remove"  Height="30" x:Name="btnRemove"  Padding="10 5" Click="btnRemove_Click" />
+        </StackPanel>
+
+        <DataGrid x:Name="detailsGrid" AutoGenerateColumns="False" Margin="153,299,225,94">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Start Date " Binding="{Binding StartDate}" />
+                <DataGridTextColumn Header="End Date" Binding="{Binding EndDate}" />
+                <DataGridTextColumn Header="Price Per Day" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Car Id" Binding="{Binding CarId}" />
+                <DataGridTextColumn Header="Car Name" Binding="{Binding Car.CarName}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="308,563,0,59" Height="30">
+            <Button Content="Save"  Height="30" x:Name="btnSave"  HorizontalAlignment="Center" Padding="10 5" Margin=" 0 0 5 0"  VerticalAlignment="Top"  Click="SaveClick"/>
+            <Button Content="Close"  Height="30" HorizontalAlignment="Center"  VerticalAlignment="Top" Padding="10 5"  Click="Button_Click"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

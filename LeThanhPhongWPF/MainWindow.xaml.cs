@@ -41,7 +41,7 @@ namespace LeThanhPhongWPF
         {
             var config = new ConfigurationBuilder()
                           .SetBasePath(Directory.GetCurrentDirectory())
-                          .AddJsonFile("appsetting.json", optional: false, reloadOnChange: true).Build();
+                          .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).Build();
             string adminEmail = config.GetSection("Admin:Email").Value;
             string adminPassword = config.GetSection("Admin:Password").Value;
             return (adminEmail, adminPassword);
@@ -62,14 +62,33 @@ namespace LeThanhPhongWPF
                 {
                     var adminWindow = ((IServiceProvider)this.Tag).GetService<AdminWindow>();
                     adminWindow.Tag = this.Tag;
+                    adminWindow.LogoutHandler = () =>
+                    {
+                        txtEmail.Text = "";
+                        txtPassword.Password = "";
+                        adminWindow.Close();
+                        this.Show();
+                    };
                     this.Hide();
                     adminWindow.Show();
                 }else{   
                     var user = _customerService.CheckAuth(email, password);
                     if(user != null)
                     {
+                        if(user.CustomerStatus < 1)
+                        {
+                            throw new Exception("This account has been banned");
+                        }
                         var customerWindow = ((IServiceProvider)this.Tag).GetService<CustomerWindow>();
                         AppState.CustomerInformation = user;
+                        customerWindow.LogoutHandler = () =>
+                        {
+                            AppState.CustomerInformation = null;
+                            txtEmail.Text = "";
+                            txtPassword.Password = "";
+                            customerWindow.Close();
+                            this.Show();
+                        };
                         this.Hide();
                         customerWindow.Show();
                     }else
@@ -81,7 +100,7 @@ namespace LeThanhPhongWPF
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Utils.ErrorAlert(ex.Message);
             }
         }
     }

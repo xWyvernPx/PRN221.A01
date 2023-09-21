@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Domain.Models;
 
@@ -27,9 +28,16 @@ public partial class FucarRentingManagementContext : DbContext
 
     public virtual DbSet<Supplier> Suppliers { get; set; }
 
+    private string GetConnectionString()
+    {
+        IConfiguration _configuration = (new ConfigurationBuilder()
+                            .SetBasePath(Directory.GetCurrentDirectory())
+                            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true) ).Build();
+        return _configuration.GetConnectionString("DefaultConnection");
+    }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=wyvernpserver.tech,1433;Initial Catalog=FUCarRentingManagement;User ID=sa;Password=ThanhPhong2506;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer(GetConnectionString());
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

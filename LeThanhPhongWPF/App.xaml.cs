@@ -38,16 +38,16 @@ namespace LeThanhPhongWPF
         {
             var builder = new ConfigurationBuilder()
                            .SetBasePath(Directory.GetCurrentDirectory())
-                           .AddJsonFile("appsetting.json", optional: false, reloadOnChange: true);
+                           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             _configuration = builder.Build();
 
             Console.WriteLine( _configuration.GetConnectionString("DefaultConnection"));
-            //var mainWindow = serviceProvider.GetService<MainWindow>();
-            //mainWindow.Tag = serviceProvider;
-            //mainWindow?.Show();
-            var adminWindow = serviceProvider.GetService<AdminWindow>();
-            adminWindow.Tag = serviceProvider;
-            adminWindow.Show();
+            var mainWindow = serviceProvider.GetService<MainWindow>();
+            mainWindow.Tag = serviceProvider;
+            mainWindow?.Show();
+            //var adminWindow = serviceProvider.GetService<AdminWindow>();
+            //adminWindow.Tag = serviceProvider;
+            //adminWindow.Show();
             //var customerWindow = serviceProvider.GetService<CustomerWindow>();
             //customerWindow.Show();
             //var carMani = serviceProvider.GetService<CarManipulateWindow>();
@@ -77,6 +77,8 @@ namespace LeThanhPhongWPF
             services.AddTransient<CustomerManipulateWindow>();
             services.AddTransient<TransactionDetailViewWindow>();
             services.AddTransient<CarRentingWindow>();
+            services.AddTransient<TransactionManipulateWindow>();
+
 
 
 

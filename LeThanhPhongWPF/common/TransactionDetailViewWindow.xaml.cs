@@ -53,12 +53,6 @@ namespace LeThanhPhongWPF.common
                 this.txtId.Text = RentingTransaction.RentingTransationId.ToString();
                 this.txtDate.Text = RentingTransaction.RentingDate.ToString();
                 this.txtTotalPrice.Text = RentingTransaction.TotalPrice.ToString();
-                if (!IsManipulation)
-                {
-                    btnAdd.Visibility = Visibility.Collapsed;
-                    btnRemove.Visibility = Visibility.Collapsed;
-                    btnSave.Visibility = Visibility.Visible;
-                }
             }else
             {
                 //Create mode
@@ -71,7 +65,6 @@ namespace LeThanhPhongWPF.common
         }
         private void LoadCustomers() {
             customers = customerService.GetAll().ToList();
-            customerCombo.ItemsSource = customers;
         }
         private void ReloadDetailsGrid()
         {
@@ -120,24 +113,7 @@ namespace LeThanhPhongWPF.common
         }
 
         private void SaveClick(object sender, RoutedEventArgs e) {
-            var customer = (Customer)customerCombo.SelectedItem;
-            //Todo validate
-            if(customer is null) {
-                Utils.ErrorAlert("Select cutomer");
-                return;
-            }
-            var nextId = transService.getNextId();
-            var newTrans = new RentingTransaction() {
-                Customer = customer,
-                CustomerId = customer.CustomerId,
-                RentingDate = DateTime.Now,
-                RentingDetails = rentingDetails,
-                RentingStatus = 1,
-                TotalPrice = decimal.Parse(txtTotalPrice.Text),
-                RentingTransationId= nextId
-            };
-            transService.Create(newTrans);
-            this.DialogResult = true;
+          
         }
     }
 }

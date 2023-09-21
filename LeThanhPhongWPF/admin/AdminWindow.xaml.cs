@@ -33,7 +33,7 @@ namespace LeThanhPhongWPF.admin
         private ObservableCollection<CarInformation> Cars { get; set; } = new();
         private ObservableCollection<Customer> Customers { get; set; } = new();
 
-
+        public Action LogoutHandler {get;set;}
         private ObservableCollection<RentingTransaction> RentingTransactions { get; set; } = new();
 
         public AdminWindow(ICustomerService _customerServivce, ICarService carService, IRentingTransactionService rentingTransactionService, IServiceProvider serviceProvider)
@@ -52,6 +52,8 @@ namespace LeThanhPhongWPF.admin
                 carService.GetAll().ToList().ForEach(car => Cars.Add(car));
                 rentingDatagrid.ItemsSource = RentingTransactions;
                 transactionService.GetAll().ToList().ForEach(trans => RentingTransactions.Add(trans));
+                customerSearchType.ItemsSource = new List<String>() { "name","email", "telephone" };
+                customerSearchType.SelectedItem = "name";
             };
 
         }
@@ -64,6 +66,7 @@ namespace LeThanhPhongWPF.admin
         }
         private void LoadCar()
         {
+            carDatagrid.ItemsSource = null;
             Cars = new ObservableCollection<CarInformation>();
             carService.GetAll().ToList().ForEach(car => Cars.Add(car));
             carDatagrid.ItemsSource = Cars;
@@ -178,8 +181,7 @@ namespace LeThanhPhongWPF.admin
                 }
                 carEditWindow.carInformation = car;
                 carEditWindow.ShowDialog();
-                //tODO FIX
-                LoadCustomer();
+                LoadCar();
             }
             catch (Exception ex)
             {
@@ -205,13 +207,26 @@ namespace LeThanhPhongWPF.admin
         }
         private void TransAddClick(object sender, RoutedEventArgs e)
         {
-            var transAddWindow = serviceProvider.GetRequiredService<TransactionDetailViewWindow>();
+            var transAddWindow = serviceProvider.GetRequiredService<TransactionManipulateWindow>();
             transAddWindow.IsManipulation = true;
             transAddWindow.ShowDialog();
             LoadTrans();
         }
         private void TransUpdateClick(object sender, RoutedEventArgs e)
         {
+            var trans = (RentingTransaction)rentingDatagrid.SelectedItem;
+            var transAddWindow = serviceProvider.GetRequiredService<TransactionManipulateWindow>();
+            transAddWindow.IsManipulation = true;
+            if(trans is null)
+            {
+                Utils.ErrorAlert("Select row to update");
+                return;
+            }
+            transAddWindow.RentingTransaction = trans;
+            transAddWindow.ShowDialog();
+            LoadTrans();
+
+
         }
         private void TransDeleteClick(object sender, RoutedEventArgs e)
         {
@@ -232,6 +247,27 @@ namespace LeThanhPhongWPF.admin
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSearchCar_Click(object sender, RoutedEventArgs e)
+        {
+            carDatagrid.ItemsSource = null;
+            Cars = new ObservableCollection<CarInformation>();
+            carService.SearchCar(txtSearchCar.Text).ToList().ForEach(car => Cars.Add(car));
+            carDatagrid.ItemsSource = Cars;
+        }
+        private void CustomerSearchClick(object sender, RoutedEventArgs e)
+        {
+            customerDatagrid.ItemsSource = null;
+            var type = customerSearchType.SelectedItem as string;
+            Customers = new ObservableCollection<Customer>();
+            customerService.SearchCustomer(type, txtSearchCustomer.Text).ToList().ForEach(customer => Customers.Add(customer));
+            customerDatagrid.ItemsSource = Customers;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            LogoutHandler?.Invoke();
         }
     }
 }

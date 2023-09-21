@@ -1104,7 +1104,9 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "Microsoft.Extensions.Configuration.Json": "7.0.0"
         },
         "compile": {
           "bin/placeholder/Domain.dll": {}
@@ -3000,24 +3002,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\phong\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\phong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\LeThanhPhongWPF\\LeThanhPhongWPF.csproj",
+      "projectUniqueName": "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\LeThanhPhongWPF\\LeThanhPhongWPF.csproj",
       "projectName": "LeThanhPhongWPF",
-      "projectPath": "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\LeThanhPhongWPF\\LeThanhPhongWPF.csproj",
+      "projectPath": "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\LeThanhPhongWPF\\LeThanhPhongWPF.csproj",
       "packagesPath": "C:\\Users\\phong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\LeThanhPhongWPF\\obj\\",
+      "outputPath": "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\LeThanhPhongWPF\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\phong\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3031,8 +3028,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\Business\\Business.csproj"
+            "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\Business\\Business.csproj": {
+              "projectPath": "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\Business\\Business.csproj"
             }
           }
         }
@@ -3083,7 +3080,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

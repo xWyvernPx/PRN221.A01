@@ -100,5 +100,16 @@ namespace LeThanhPhongWPF.Extensions
                 throw new Exception($"'{fieldName}' should not be empty.");
             }
         }
+        public static bool IsOver18YearsOld(this DateTime? date)
+        {
+            DateTime today = DateTime.Today;
+            DateTime eighteenYearsAgo = today.AddYears(-18);
+            return date <= eighteenYearsAgo;
+        }
+        public static bool IsNotExceedingCurrentTime(this DateTime? date)
+        {
+            DateTime currentDateTime = DateTime.Now;
+            return date <= currentDateTime;
+        }
     }
 }

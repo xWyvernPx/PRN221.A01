@@ -55,5 +55,23 @@ namespace Business.Service.Impl
                                 .SetProperty(c => c.Telephone, customer.Telephone));
             _repository.SaveChanges();
         }
+
+        public IEnumerable<Customer> SearchCustomer(string type, string keyword)
+        {
+            IEnumerable<Customer> result;
+            switch (type)
+            {
+                case "email":
+                    result = _repository.GetAll().Where(customer => customer.Email.Contains(keyword));
+                    break;
+                case "telephone":
+                    result = _repository.GetAll().Where(customer => customer.Telephone.Contains(keyword));
+                    break;
+                default:
+                    result = _repository.GetAll().Where(customer => customer.CustomerName.Contains(keyword));
+                    break;
+            }
+            return result;
+        }
     }
 }

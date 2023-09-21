@@ -1,7 +1,0 @@
-{
-  "DefaultConnection": "Check",
-  "Admin": {
-    "Email": "admin@FUCarRentingSystem.com",
-    "Password": "@@admin@@"
-  }
-}

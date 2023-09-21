@@ -1,17 +1,3 @@
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\bin\Debug\net7.0\Domain.deps.json
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\bin\Debug\net7.0\Domain.runtimeconfig.json
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\bin\Debug\net7.0\Domain.dll
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\bin\Debug\net7.0\Domain.pdb
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\Domain.dll
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\refint\Domain.dll
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\Domain.pdb
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\Domain.genruntimeconfig.cache
-X:\Project\prn221\LeThanhPhong_SE1603_A01\Domain\obj\Debug\net7.0\ref\Domain.dll
 C:\Users\phong\Documents\Project\prn221\PRN221.A01\Domain\bin\Debug\net7.0\Domain.deps.json
 C:\Users\phong\Documents\Project\prn221\PRN221.A01\Domain\bin\Debug\net7.0\Domain.runtimeconfig.json
 C:\Users\phong\Documents\Project\prn221\PRN221.A01\Domain\bin\Debug\net7.0\Domain.dll
