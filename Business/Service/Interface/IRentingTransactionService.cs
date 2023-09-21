@@ -9,6 +9,7 @@ namespace Business.Service.Interface
 {
     public interface IRentingTransactionService : IBaseService<RentingTransaction>
     {
+    public int getNextId();
         void DeleteById(int id);
     }
 }

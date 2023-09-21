@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-X:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\obj\Debug\net7.0-windows\
+C:\Users\phong\Documents\Project\prn221\PRN221.A01\LeThanhPhongWPF\obj\Debug\net7.0-windows\
 LeThanhPhongWPF
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-X:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\App.xaml
+C:\Users\phong\Documents\Project\prn221\PRN221.A01\LeThanhPhongWPF\App.xaml
 81181029609
 
 15-1837231677
-234-758007655
+234-1709568585
 admin\AdminWindow.xaml;common\CarManipulateWindow.xaml;common\CarRentingTransactionManipulate.xaml;common\CarRentingWindow.xaml;common\CustomerManipulateWindow.xaml;common\TransactionDetailViewWindow.xaml;customer\CustomerWindow.xaml;MainWindow.xaml;
 
-False
+True
 

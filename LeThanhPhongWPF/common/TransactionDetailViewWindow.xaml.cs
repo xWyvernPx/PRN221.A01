@@ -29,13 +29,18 @@ namespace LeThanhPhongWPF.common
         public bool IsManipulation { get; set; }
         private IRentingDetailService rentingDetailService;
         private IServiceProvider serviceProvider;
+        private ICustomerService customerService;
+        private IRentingTransactionService transService;
         private List<RentingDetail> rentingDetails;
+        private List<Customer> customers;
         private bool isUpdate;
-        public TransactionDetailViewWindow(IRentingDetailService rentingDetailService, IServiceProvider serviceProvider)
+        public TransactionDetailViewWindow(IRentingDetailService rentingDetailService, IServiceProvider serviceProvider, ICustomerService customerService,   IRentingTransactionService transService)
         {
             InitializeComponent();
             this.rentingDetailService = rentingDetailService;
             this.serviceProvider = serviceProvider;
+            this.customerService = customerService;
+            this.transService = transService;
             isUpdate = IsManipulation && RentingTransaction is not null;
             Loaded += LoadedHanler;
         }
@@ -52,6 +57,7 @@ namespace LeThanhPhongWPF.common
                 {
                     btnAdd.Visibility = Visibility.Collapsed;
                     btnRemove.Visibility = Visibility.Collapsed;
+                    btnSave.Visibility = Visibility.Visible;
                 }
             }else
             {
@@ -61,6 +67,11 @@ namespace LeThanhPhongWPF.common
                     txtDate.Text = DateTime.Now.ToString();
                 }
             }
+            LoadCustomers();
+        }
+        private void LoadCustomers() {
+            customers = customerService.GetAll().ToList();
+            customerCombo.ItemsSource = customers;
         }
         private void ReloadDetailsGrid()
         {
@@ -106,6 +117,27 @@ namespace LeThanhPhongWPF.common
             {
                 Utils.ErrorAlert("Select a row to remove");
             }
+        }
+
+        private void SaveClick(object sender, RoutedEventArgs e) {
+            var customer = (Customer)customerCombo.SelectedItem;
+            //Todo validate
+            if(customer is null) {
+                Utils.ErrorAlert("Select cutomer");
+                return;
+            }
+            var nextId = transService.getNextId();
+            var newTrans = new RentingTransaction() {
+                Customer = customer,
+                CustomerId = customer.CustomerId,
+                RentingDate = DateTime.Now,
+                RentingDetails = rentingDetails,
+                RentingStatus = 1,
+                TotalPrice = decimal.Parse(txtTotalPrice.Text),
+                RentingTransationId= nextId
+            };
+            transService.Create(newTrans);
+            this.DialogResult = true;
         }
     }
 }

@@ -20,7 +20,9 @@ namespace Business.Service.Impl
         public RentingTransactionService() : base(new Repository<RentingTransaction>(new()))
         {
         }
-
+        public int getNextId() {
+            return _repository.GetAll().Max(t => t.RentingTransationId) + 1;
+        }
         public void DeleteById(int id)
         {
             var transDetails = rentingDetailRepo.GetAll().Where(rd => rd.RentingTransactionId == id);

@@ -57,6 +57,7 @@ namespace LeThanhPhongWPF.admin
         }
         private void LoadCustomer()
         {
+            customerDatagrid.ItemsSource = null;
             Customers = new ObservableCollection<Customer>();
             customerService.GetCustomers().ToList().ForEach(customer => Customers.Add(customer));
             customerDatagrid.ItemsSource = Customers;
@@ -207,6 +208,7 @@ namespace LeThanhPhongWPF.admin
             var transAddWindow = serviceProvider.GetRequiredService<TransactionDetailViewWindow>();
             transAddWindow.IsManipulation = true;
             transAddWindow.ShowDialog();
+            LoadTrans();
         }
         private void TransUpdateClick(object sender, RoutedEventArgs e)
         {
