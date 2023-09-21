@@ -42,12 +42,12 @@ namespace LeThanhPhongWPF
             _configuration = builder.Build();
 
             Console.WriteLine( _configuration.GetConnectionString("DefaultConnection"));
-            var mainWindow = serviceProvider.GetService<MainWindow>();
-            mainWindow.Tag = serviceProvider;
-            mainWindow?.Show();
-            //var adminWindow = serviceProvider.GetService<AdminWindow>();
-            //adminWindow.Tag = serviceProvider;
-            //adminWindow.Show();
+            //var mainWindow = serviceProvider.GetService<MainWindow>();
+            //mainWindow.Tag = serviceProvider;
+            //mainWindow?.Show();
+            var adminWindow = serviceProvider.GetService<AdminWindow>();
+            adminWindow.Tag = serviceProvider;
+            adminWindow.Show();
             //var customerWindow = serviceProvider.GetService<CustomerWindow>();
             //customerWindow.Show();
             //var carMani = serviceProvider.GetService<CarManipulateWindow>();
@@ -61,6 +61,8 @@ namespace LeThanhPhongWPF
             services.AddScoped(typeof(ICustomerService), typeof(CustomerService));
             services.AddScoped(typeof(ICarService), typeof(CarService));
             services.AddScoped(typeof(IRentingTransactionService), typeof(RentingTransactionService));
+            services.AddScoped(typeof(IRentingDetailService), typeof(RentingDetailService));
+
             services.AddDbContext<FucarRentingManagementContext>();
             services.AddScoped(typeof(IManufacturerService), typeof(ManufacturerService));
             services.AddScoped(typeof(ISupplierService), typeof(SupplierService));
@@ -73,6 +75,9 @@ namespace LeThanhPhongWPF
             services.AddTransient<CustomerWindow>();
             services.AddTransient<CarManipulateWindow>();
             services.AddTransient<CustomerManipulateWindow>();
+            services.AddTransient<TransactionDetailViewWindow>();
+            services.AddTransient<CarRentingWindow>();
+
 
 
         }

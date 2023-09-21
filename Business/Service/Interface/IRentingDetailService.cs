@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Business.Service.Interface
 {
-    public interface IRentingTransactionService : IBaseService<RentingTransaction>
+    public interface IRentingDetailService : IBaseService<RentingDetail>
     {
-        void DeleteById(int id);
+        IEnumerable<RentingDetail> GetRentingDetailsByTransactionId(int transactionId);
     }
 }

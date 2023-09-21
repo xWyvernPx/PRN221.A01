@@ -87,18 +87,16 @@
                         <ColumnDefinition Width="317*"/>
                     </Grid.ColumnDefinitions>
                     <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,108"
-                   AutoGenerateColumns="True"
+                   AutoGenerateColumns="False"
                    x:Name="rentingDatagrid" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3"
                                 ItemsSource="{Binding Path=RentingTransactions}"
+                              IsReadOnly="True"
                               >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="CarId" Binding="{Binding RentingTransationId  }" />
-                            <DataGridTextColumn Header="CarName" Binding="{Binding RentingDate  }" />
-                            <DataGridTextColumn Header="CarDescription" Binding="{Binding TotalPrice  }" />
-                            <DataGridTextColumn Header="NumberOfDoors" Binding="{Binding Customer  }" />
-                            <DataGridTextColumn Header="SeatingCapacity" Binding="{Binding RentingDetails  }" />
-                            <DataGridTextColumn Header="FuelType" Binding="{Binding FuelType }" />
-                            <DataGridTextColumn Header="Year" Binding="{Binding Year }" />
+                            <DataGridTextColumn Header="Id" Binding="{Binding RentingTransationId  }" />
+                            <DataGridTextColumn Header="Renting Date " Binding="{Binding RentingDate  }" />
+                            <DataGridTextColumn Header="Total Price" Binding="{Binding TotalPrice  }" />
+                            <DataGridTextColumn Header="Renting Status " Binding="{Binding RentingStatus}" />
                         </DataGrid.Columns>
                         <DataGrid.RenderTransform>
                             <TransformGroup>
@@ -117,9 +115,9 @@
                         <Button Content="Search" Margin="5px 0 0 0"   Width="85" Height="29" />
                     </StackPanel>
                     <StackPanel  Orientation="Horizontal" Height="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="2" Margin="127,0,0,0">
-                        <Button Content="Add" Margin="5,0,5,0" Padding="15px 0px"></Button>
-                        <Button Content="Update" Margin="5,0,5,0" Padding="15px 0px"/>
-                        <Button Content="Delete" Margin="5,0,5,0" Padding="15px 0px"></Button>
+                        <Button Content="Add" Margin="5,0,5,0" Padding="15px 0px" Click="TransAddClick"></Button>
+                        <Button Content="Update" Margin="5,0,5,0" Padding="15px 0px" Click="TransUpdateClick"/>
+                        <Button Content="Delete" Margin="5,0,5,0" Padding="15px 0px" Click="TransDeleteClick"></Button>
                     </StackPanel>
                 </Grid>
             </TabItem>

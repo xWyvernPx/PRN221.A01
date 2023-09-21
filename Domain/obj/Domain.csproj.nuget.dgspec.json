@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\Domain\\Domain.csproj": {}
+    "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\Domain\\Domain.csproj": {
+    "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\Domain\\Domain.csproj",
+        "projectUniqueName": "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\Domain\\Domain.csproj",
+        "projectPath": "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\phong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\Domain\\obj\\",
+        "outputPath": "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\phong\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

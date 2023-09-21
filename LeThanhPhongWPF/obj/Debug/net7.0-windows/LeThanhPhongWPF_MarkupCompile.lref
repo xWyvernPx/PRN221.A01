@@ -1,9 +1,11 @@
 ﻿
 
-FC:\Users\phong\Documents\Project\prn221\PRN221.A01\LeThanhPhongWPF\admin\AdminWindow.xaml;;
-FC:\Users\phong\Documents\Project\prn221\PRN221.A01\LeThanhPhongWPF\common\CarManipulateWindow.xaml;;
-FC:\Users\phong\Documents\Project\prn221\PRN221.A01\LeThanhPhongWPF\common\CarRentingTransactionManipulate.xaml;;
-FC:\Users\phong\Documents\Project\prn221\PRN221.A01\LeThanhPhongWPF\common\CustomerManipulateWindow.xaml;;
-FC:\Users\phong\Documents\Project\prn221\PRN221.A01\LeThanhPhongWPF\customer\CustomerWindow.xaml;;
-FC:\Users\phong\Documents\Project\prn221\PRN221.A01\LeThanhPhongWPF\MainWindow.xaml;;
+FX:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\admin\AdminWindow.xaml;;
+FX:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\common\CarManipulateWindow.xaml;;
+FX:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\common\CarRentingTransactionManipulate.xaml;;
+FX:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\common\CarRentingWindow.xaml;;
+FX:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\common\CustomerManipulateWindow.xaml;;
+FX:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\common\TransactionDetailViewWindow.xaml;;
+FX:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\customer\CustomerWindow.xaml;;
+FX:\Project\prn221\LeThanhPhong_SE1603_A01\LeThanhPhongWPF\MainWindow.xaml;;
 

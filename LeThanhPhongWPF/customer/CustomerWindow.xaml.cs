@@ -93,7 +93,10 @@ namespace LeThanhPhongWPF.customer
         }
 
         private void ViewDetailClick(object sender, RoutedEventArgs e) {
-
+            var trans = (RentingTransaction)transDatagrid.SelectedItem;
+            var transViewDetailWindow = serviceProvider.GetRequiredService<TransactionDetailViewWindow>();
+            transViewDetailWindow.RentingTransaction = trans;
+            transViewDetailWindow.ShowDialog();
         }
     }
 }

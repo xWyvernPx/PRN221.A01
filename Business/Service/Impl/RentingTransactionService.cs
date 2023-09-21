@@ -12,11 +12,26 @@ namespace Business.Service.Impl
 {
     public class RentingTransactionService : BaseService<RentingTransaction>, IRentingTransactionService
     {
-        public RentingTransactionService(IRepository<RentingTransaction> repository) : base(repository)
+        private readonly IRepository<RentingDetail> rentingDetailRepo;
+        public RentingTransactionService(IRepository<RentingTransaction> repository, IRepository<RentingDetail> rentingDetailRepo) : base(repository)
         {
+            this.rentingDetailRepo = rentingDetailRepo;
         }
         public RentingTransactionService() : base(new Repository<RentingTransaction>(new()))
         {
+        }
+
+        public void DeleteById(int id)
+        {
+            var transDetails = rentingDetailRepo.GetAll().Where(rd => rd.RentingTransactionId == id);
+            //TODO Test
+            //foreach (var transDetail in transDetails)
+            //{
+            //    rentingDetailRepo.Remove(transDetail);
+            //}
+            rentingDetailRepo.RemoveRange(transDetails);
+            var trans = this.GetById(id);
+            this.Delete(trans);
         }
     }
 }

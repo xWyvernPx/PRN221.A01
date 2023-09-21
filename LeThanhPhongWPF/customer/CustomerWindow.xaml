@@ -27,9 +27,15 @@
             </TabItem>
             <TabItem Header="History" GotFocus="TabItem_GotFocus_1" >
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,108"
-                       AutoGenerateColumns="True"
+                    <DataGrid Margin="0,0,0,108"
+                       AutoGenerateColumns="False"
                        x:Name="transDatagrid" ItemsSource="{Binding Path=RentingTransactions}" RenderTransformOrigin="0.5,0.5">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding RentingTransationId  }" />
+                            <DataGridTextColumn Header="Renting Date " Binding="{Binding RentingDate  }" />
+                            <DataGridTextColumn Header="Total Price" Binding="{Binding TotalPrice  }" />
+                            <DataGridTextColumn Header="Renting Status " Binding="{Binding RentingStatus}" />
+                        </DataGrid.Columns>
                         <DataGrid.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cqAuaGgwfhpSpTpDlfypYzvuR8+a8f067oAmxBYEOETuJo1qQ6wiH/B+YVUTk208yR9xgkEwucvaFSYwl5+iFQ==",
+  "dgSpecHash": "UIm2WwOD82uKd62dIa3BhdFloFqJOrQdoPCTyiTPN8o2wMYgn4s1pkVEnTTjrcuP9Cxsl/b87uqKO2P4ZXT9wA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\phong\\Documents\\Project\\prn221\\PRN221.A01\\LeThanhPhongWPF\\LeThanhPhongWPF.csproj",
+  "projectFilePath": "X:\\Project\\prn221\\LeThanhPhong_SE1603_A01\\LeThanhPhongWPF\\LeThanhPhongWPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phong\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\phong\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

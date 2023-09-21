@@ -1,0 +1,25 @@
+﻿<Window x:Class="LeThanhPhongWPF.common.CarRentingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeThanhPhongWPF.common"
+        mc:Ignorable="d"
+        Title="CarRentingWindow" Height="398" Width="801">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" Margin="0,27,0,0" TextWrapping="Wrap" Text="Renting" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="From" HorizontalAlignment="Left" Margin="282,74,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dateFrom" HorizontalAlignment="Left" Margin="366,76,0,0" VerticalAlignment="Top" Width="203" SelectedDateChanged="dateFrom_SelectedDateChanged"/>
+        <Label Content="To" HorizontalAlignment="Left" Margin="282,118,0,0" VerticalAlignment="Top"/>
+        <DatePicker  x:Name="dateTo" HorizontalAlignment="Left" Margin="366,120,0,0" VerticalAlignment="Top" Width="203" SelectedDateChanged="dateTo_SelectedDateChanged"/>
+        <Label Content="Car" HorizontalAlignment="Left" Margin="282,165,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="carCombobox" HorizontalAlignment="Left" Margin="366,167,0,0" VerticalAlignment="Top" Width="203" DisplayMemberPath="CarName" SelectionChanged="carCombobox_SelectionChanged"/>
+        <Label Content="Price Per Day" HorizontalAlignment="Left" Margin="282,212,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" x:Name="txtPricePerDay" Margin="366,217,0,0" VerticalAlignment="Top" Width="203"/>
+        <Button Content="Ok" HorizontalAlignment="Left" Margin="324,330,0,0" Padding="10 5" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="400,330,0,0" Padding="10 5" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label Content="Total Price" HorizontalAlignment="Left" Margin="282,243,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left"  x:Name="txtPriceInTotal" Margin="366,248,0,0" VerticalAlignment="Top" Width="203"/>
+
+    </Grid>
+</Window>

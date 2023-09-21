@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,16 +36,16 @@ namespace LeThanhPhongWPF.admin
 
         private ObservableCollection<RentingTransaction> RentingTransactions { get; set; } = new();
 
-        public AdminWindow(ICustomerService _customerServivce, ICarService carService, IRentingTransactionService rentingTransactionService)
+        public AdminWindow(ICustomerService _customerServivce, ICarService carService, IRentingTransactionService rentingTransactionService, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             this.customerService = _customerServivce;
             this.carService = carService;
             this.transactionService = rentingTransactionService;
-            this.serviceProvider = (IServiceProvider)Tag;
+            this.serviceProvider = serviceProvider;
             Loaded += (object sender, RoutedEventArgs e) =>
             {
-                
+
                 customerDatagrid.ItemsSource = Customers;
                 customerService.GetCustomers().ToList().ForEach(customer => Customers.Add(customer));
                 carDatagrid.ItemsSource = Cars;
@@ -54,7 +55,7 @@ namespace LeThanhPhongWPF.admin
             };
 
         }
-        private void LoadCustomer ()
+        private void LoadCustomer()
         {
             Customers = new ObservableCollection<Customer>();
             customerService.GetCustomers().ToList().ForEach(customer => Customers.Add(customer));
@@ -65,6 +66,12 @@ namespace LeThanhPhongWPF.admin
             Cars = new ObservableCollection<CarInformation>();
             carService.GetAll().ToList().ForEach(car => Cars.Add(car));
             carDatagrid.ItemsSource = Cars;
+        }
+        private void LoadTrans()
+        {
+            RentingTransactions = new();
+            transactionService.GetAll().ToList().ForEach(trans => RentingTransactions.Add(trans));
+            rentingDatagrid.ItemsSource = RentingTransactions;
         }
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -105,7 +112,7 @@ namespace LeThanhPhongWPF.admin
             {
                 var customerAddWindow = ((ServiceProvider)this.Tag).GetService<CustomerManipulateWindow>();
                 var customer = (Customer)customerDatagrid.SelectedItem;
-                if(customer is null)
+                if (customer is null)
                 {
                     Utils.ErrorAlert("Choose a row to update");
                     return;
@@ -126,7 +133,7 @@ namespace LeThanhPhongWPF.admin
             {
                 var customer = (Customer)customerDatagrid.SelectedItem;
                 var confirmResult = Utils.ConfirmationBox("Do you really want to delete this customer ?");
-                if(confirmResult == MessageBoxResult.Yes)
+                if (confirmResult == MessageBoxResult.Yes)
                 {
                     customerService.Delete(customer);
                     LoadCustomer();
@@ -146,7 +153,7 @@ namespace LeThanhPhongWPF.admin
                 var carEditWindow = ((ServiceProvider)this.Tag).GetService<CarManipulateWindow>();
                 carEditWindow.SaveSuccessCallback = () =>
                 {
-                   
+
                 };
                 carEditWindow.ShowDialog();
                 LoadCar();
@@ -192,6 +199,35 @@ namespace LeThanhPhongWPF.admin
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void TransAddClick(object sender, RoutedEventArgs e)
+        {
+            var transAddWindow = serviceProvider.GetRequiredService<TransactionDetailViewWindow>();
+            transAddWindow.IsManipulation = true;
+            transAddWindow.ShowDialog();
+        }
+        private void TransUpdateClick(object sender, RoutedEventArgs e)
+        {
+        }
+        private void TransDeleteClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var trans = (RentingTransaction)rentingDatagrid.SelectedItem;
+                
+                var confirmResult = Utils.ConfirmationBox("Do you really want to delete this car ?");
+                if (confirmResult == MessageBoxResult.Yes)
+                {
+                    transactionService.DeleteById(trans.RentingTransationId);
+
+                    LoadTrans();
+                }
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(ex.Message);
             }
         }
